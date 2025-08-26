@@ -1,0 +1,23 @@
+jdk:
+  - openjdk11
+
+before_install:
+  - echo "Setting up JitPack build environment"
+
+install:
+  - echo "Installing dependencies"
+
+before_script:
+  - echo "Preparing to build"
+
+script:
+  - mvn clean install -DskipTests=true
+
+after_success:
+  - echo "Build completed successfully"
+
+after_failure:
+  - echo "Build failed"
+
+after_script:
+  - echo "Build process finished"
